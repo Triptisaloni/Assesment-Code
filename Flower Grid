@@ -1,0 +1,45 @@
+n--> number of flowers
+
+1 type of flower --- 2*2 MATRIX
+A A
+A A
+
+2 TYPE----> 4*4 MATRIX
+B B B B
+B A A B
+B A A B
+B B B B
+
+void flowergrid(int n)
+{
+size = n*2;
+char garden[size][size];
+
+int s =0, e = size-1, c=0;
+
+while(c<size)
+{
+//first row
+   for(int i=s; i<=e; i++)
+   garden[s][i] = n+64;
+   
+   //last col
+   for(int i=s; i<=e; i++)
+   garden[i][e] = n+64;
+   
+   //last row
+    for(int i=s; i<=e; i++)
+   garden[e][i] = n+64;
+   
+   // first column
+    for(int i=s; i<=e; i++)
+   garden[i][s] = n+64;
+
+
+    n--;
+    s++;
+    e--;
+}
+   //print
+}
+
